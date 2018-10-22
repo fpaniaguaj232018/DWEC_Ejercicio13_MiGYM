@@ -11,13 +11,16 @@
 <body>
     <H1>MiGYM - REGISTRO</H1>
     <form name="fregistro">
-
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+        <br>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+        <br>
 
 
 
         <div>
             <input type="reset" value="Limpiar formulario">
-            <input type="button" value="Enviar">
+            <input type="button" value="Enviar" onclick="validar()">
         </div>
         
     </form>
