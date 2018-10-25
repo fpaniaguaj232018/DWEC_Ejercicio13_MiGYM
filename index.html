@@ -10,14 +10,20 @@
 </head>
 <body>
     <H1>MiGYM - REGISTRO</H1>
+    <div id="mensajeError" class="error"></div>
     <form name="fregistro">
         <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
         <br>
+        Hombre:<input type="radio" name="sexo" id="hombre"><br>
+        Mujer:<input type="radio" name="sexo" id="mujer">
+        <br>
         <input type="email" name="email" id="email" placeholder="Email" required>
         <br>
-
-
-
+        Fútbol:<input type="checkbox" name="deporte" id="futbol"><br>
+        Spinning:<input type="checkbox" name="deporte" id="spinning"><br>
+        Pilates:<input type="checkbox" name="deporte" id="pilates"><br>
+        Boxeo:<input type="checkbox" name="deporte" id="boxeo"><br>
+        Aerobic:<input type="checkbox" name="deporte" id="aerobic"><br>
         <div>
             <input type="reset" value="Limpiar formulario">
             <input type="button" value="Enviar" onclick="validar()">
