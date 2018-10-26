@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./js/validador.js"></script>
+    <script src="js/validador.js"></script>
+    <script src="js/paniutil.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
     <title>MiGYM - REGISTRO</title>
 </head>
@@ -24,6 +25,14 @@
         Pilates:<input type="checkbox" name="deporte" id="pilates"><br>
         Boxeo:<input type="checkbox" name="deporte" id="boxeo"><br>
         Aerobic:<input type="checkbox" name="deporte" id="aerobic"><br>
+        <select id="turno">
+            <option value="">(Seleccione turno)</option>
+            <option value="Manyana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noche">Noche</option>
+        </select>
+        <br>
+        <input type="date" id="fNacimiento">
         <div>
             <input type="reset" value="Limpiar formulario">
             <input type="button" value="Enviar" onclick="validar()">

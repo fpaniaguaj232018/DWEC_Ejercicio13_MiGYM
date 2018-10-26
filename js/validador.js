@@ -4,6 +4,8 @@ function validar(){
     validarSexo();
     validarEmail();
     validarDeportes();
+    validarTurno();
+    validarFechaNacimiento();
 }
 
 function validarNombre(){
@@ -48,6 +50,23 @@ function validarDeportes(){
         mostrarError("Elige entre 1 y 3 deportes", deportes[0]);
     }
     */
+}
+
+function validarTurno(){
+    var selectorTurno = document.querySelector("#turno");
+    if(selectorTurno.selectedIndex==0){
+        mostrarError("Debe elegir un turno");
+    }
+}
+
+function validarFechaNacimiento(){
+    var fechaNacimiento = document.fregistro.fNacimiento.value;
+    var edad = getEdad(new Date(fechaNacimiento));
+    if (isNaN(edad)){
+        mostrarError("Tiene que elegir una fecha de nacimiento");
+    } else if (edad<18){
+        mostrarError("Tiene que ser mayor de edad");
+    }
 }
 
 function mostrarError(texto, elemento){
