@@ -1,11 +1,45 @@
+
+var hayError = false;
+
 function validar(){
     mostrarError("");
+    hayError = false;
     validarNombre();  
     validarSexo();
     validarEmail();
     validarDeportes();
     validarTurno();
     validarFechaNacimiento();
+    validarTarjeta();
+    if (hayError==false){
+        //Nombre
+        var nombre = document.fregistro.nombre.value;
+        //Sexo
+        var sexo;
+        if (document.querySelector("#hombre").checked){
+            sexo = "Hombre";
+        } else {
+            sexo = "Mujer";
+        }
+        //Email
+        var email = document.fregistro.email.value;
+        //Deportes
+        var deportes = document.querySelectorAll("input[name=deporte]:checked");
+        var arrayDeportes = new Array();
+        for (var i=0;i<deportes.length;i++){
+            arrayDeportes.push(deportes[i].id);
+        }
+        //Horario
+
+        //Fecha de Nacimiento
+
+        //Numero de tarjeta
+
+        var ficha = new Ficha(
+            
+
+        );
+    }
 }
 
 function validarNombre(){
@@ -69,10 +103,22 @@ function validarFechaNacimiento(){
     }
 }
 
+function validarTarjeta(){
+    console.log("VALIDANDO TARJETA");
+    var numeroTarjeta = document.querySelector("#tarjeta").value;
+    if (numeroTarjeta=="" || isNaN(numeroTarjeta)){
+        mostrarError("El número de la tarjeta tiene que ser un número",document.querySelector("#tarjeta"));
+    } else if (numeroTarjeta.length!=16) {
+        mostrarError("Número de dígitos de la tarjeta insuficientes",document.querySelector("#tarjeta"))
+    }
+}
+
+
 function mostrarError(texto, elemento){
     document.getElementById("mensajeError").innerHTML = texto;
     if (elemento!=null) {
         elemento.focus();
     }
+    hayError=true;
 }
         

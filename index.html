@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/validador.js"></script>
     <script src="js/paniutil.js"></script>
+    <script src="js/tarjetasutil.js"></script>
+    <script src="js/ficha.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
     <title>MiGYM - REGISTRO</title>
 </head>
@@ -13,26 +15,29 @@
     <H1>MiGYM - REGISTRO</H1>
     <div id="mensajeError" class="error"></div>
     <form name="fregistro">
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+        <input value="PEPITO" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
         <br>
         Hombre:<input type="radio" name="sexo" id="hombre"><br>
-        Mujer:<input type="radio" name="sexo" id="mujer">
+        Mujer:<input type="radio" name="sexo" id="mujer" checked>
         <br>
-        <input type="email" name="email" id="email" placeholder="Email" required>
+        <input value="hola@loquesea.com" type="email" name="email" id="email" placeholder="Email" required>
         <br>
-        Fútbol:<input type="checkbox" name="deporte" id="futbol"><br>
+        Fútbol:<input type="checkbox" name="deporte" id="futbol" checked><br>
         Spinning:<input type="checkbox" name="deporte" id="spinning"><br>
-        Pilates:<input type="checkbox" name="deporte" id="pilates"><br>
+        Pilates:<input type="checkbox" name="deporte" id="pilates" checked><br>
         Boxeo:<input type="checkbox" name="deporte" id="boxeo"><br>
-        Aerobic:<input type="checkbox" name="deporte" id="aerobic"><br>
+        Aerobic:<input type="checkbox" name="deporte" id="aerobic" checked><br>
         <select id="turno">
             <option value="">(Seleccione turno)</option>
             <option value="Manyana">Mañana</option>
-            <option value="Tarde">Tarde</option>
+            <option value="Tarde" selected>Tarde</option>
             <option value="Noche">Noche</option>
         </select>
         <br>
-        <input type="date" id="fNacimiento">
+        <input type="date" id="fNacimiento" value="1998-01-05">
+        <br>
+        <input value="0123456789012345" type="number" id="tarjeta" onkeyup="identificarTarjeta()" max="9999999999999999" placeholder="Numero de tarjeta">
+        <img id="imgTarjeta" src="" height="25">
         <div>
             <input type="reset" value="Limpiar formulario">
             <input type="button" value="Enviar" onclick="validar()">
